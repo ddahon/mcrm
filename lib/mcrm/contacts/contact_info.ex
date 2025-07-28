@@ -1,4 +1,4 @@
-defmodule Mcrm.ContactInfo do
+defmodule Mcrm.Contacts.ContactInfo do
   use Ecto.Schema
   import Ecto.Changeset
 

@@ -9,3 +9,4 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+Mcrm.Repo.insert!(%Mcrm.ContactInfo{city: "Paris", first_name: "Jean", last_name: "Dujardin"})

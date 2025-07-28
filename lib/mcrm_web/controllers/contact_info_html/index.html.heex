@@ -1,0 +1,30 @@
+<.header>
+  Listing Contactinfos
+  <:actions>
+    <.link href={~p"/contactinfos/new"}>
+      <.button>New Contact info</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="contactinfos" rows={@contactinfos} row_click={&JS.navigate(~p"/contactinfos/#{&1}")}>
+  <:col :let={contact_info} label="First name">{contact_info.first_name}</:col>
+  <:col :let={contact_info} label="Last name">{contact_info.last_name}</:col>
+  <:col :let={contact_info} label="City">{contact_info.city}</:col>
+  <:col :let={contact_info} label="Region">{contact_info.region}</:col>
+  <:col :let={contact_info} label="Tel">{contact_info.tel}</:col>
+  <:col :let={contact_info} label="Email">{contact_info.email}</:col>
+  <:col :let={contact_info} label="Role">{contact_info.role}</:col>
+  <:col :let={contact_info} label="Notes">{contact_info.notes}</:col>
+  <:action :let={contact_info}>
+    <div class="sr-only">
+      <.link navigate={~p"/contactinfos/#{contact_info}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/contactinfos/#{contact_info}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={contact_info}>
+    <.link href={~p"/contactinfos/#{contact_info}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

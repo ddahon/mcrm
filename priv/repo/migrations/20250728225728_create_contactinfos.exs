@@ -3,11 +3,14 @@ defmodule Mcrm.Repo.Migrations.CreateContactinfos do
 
   def change do
     create table(:contactinfos) do
-      add :title, :string
+      add :first_name, :string
+      add :last_name, :string
+      add :city, :string
+      add :region, :string
       add :tel, :string
       add :email, :string
-      add :website, :string
-      add :notes, :string
+      add :role, :string
+      add :notes, :text
 
       timestamps(type: :utc_datetime)
     end
