@@ -16,3 +16,47 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+
+# TODO
+
+## Contact
+- Nom
+-  Prénom
+-  Fonction
+- Entreprise ?
+- Ville
+- Region
+- Linkedin?
+- mail
+- tel
+- Date de dernier contact?
+- Notes (avec historique)?
+- Statut?
+
+- Action + date (appeler le XX/XX)
+  - Types d'action: rdv, appeler, envoyer mail
+- Bouton envoyer un mail
+  - Choisir template
+  - Générer mail puis copier/coller seulement dans un premier temps
+
+## Actions/Liste de tâches
+- Trié par jour
+- Intégration à l'agenda
+
+## Company
+- Nom
+- Ville
+- Region
+- Site web
+- Linkedin
+- Mail
+- Tel
+- Secteur
+
+# Workflow
+1. Choisir company
+2. Liste des contacts de l'entreprise
+3. Accèder à fiche contact
+
+# Import/Export
+- csv
