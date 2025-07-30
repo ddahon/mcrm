@@ -3,9 +3,9 @@ defmodule McrmWeb.ContactInfoControllerTest do
 
   import Mcrm.ContactsFixtures
 
-  @create_attrs %{role: "some role", first_name: "some first_name", last_name: "some last_name", city: "some city", region: "some region", tel: "some tel", email: "some email", notes: "some notes"}
-  @update_attrs %{role: "some updated role", first_name: "some updated first_name", last_name: "some updated last_name", city: "some updated city", region: "some updated region", tel: "some updated tel", email: "some updated email", notes: "some updated notes"}
-  @invalid_attrs %{role: nil, first_name: nil, last_name: nil, city: nil, region: nil, tel: nil, email: nil, notes: nil}
+  @create_attrs %{status: "some status", role: "some role", first_name: "some first_name", last_name: "some last_name", city: "some city", region: "some region", tel: "some tel", email: "some email", linkedin: "some linkedin", last_contact_date: ~D[2025-07-29], notes: "some notes"}
+  @update_attrs %{status: "some updated status", role: "some updated role", first_name: "some updated first_name", last_name: "some updated last_name", city: "some updated city", region: "some updated region", tel: "some updated tel", email: "some updated email", linkedin: "some updated linkedin", last_contact_date: ~D[2025-07-30], notes: "some updated notes"}
+  @invalid_attrs %{status: nil, role: nil, first_name: nil, last_name: nil, city: nil, region: nil, tel: nil, email: nil, linkedin: nil, last_contact_date: nil, notes: nil}
 
   describe "index" do
     test "lists all contactinfos", %{conn: conn} do
@@ -55,7 +55,7 @@ defmodule McrmWeb.ContactInfoControllerTest do
       assert redirected_to(conn) == ~p"/contactinfos/#{contact_info}"
 
       conn = get(conn, ~p"/contactinfos/#{contact_info}")
-      assert html_response(conn, 200) =~ "some updated role"
+      assert html_response(conn, 200) =~ "some updated status"
     end
 
     test "renders errors when data is invalid", %{conn: conn, contact_info: contact_info} do

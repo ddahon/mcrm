@@ -11,6 +11,9 @@ defmodule Mcrm.Contacts.ContactInfo do
     field :tel, :string
     field :email, :string
     field :notes, :string
+    field :linkedin, :string
+    field :last_contact_date, :date
+    field :status, :string
 
     timestamps(type: :utc_datetime)
   end
@@ -18,7 +21,7 @@ defmodule Mcrm.Contacts.ContactInfo do
   @doc false
   def changeset(contact_info, attrs) do
     contact_info
-    |> cast(attrs, [:first_name, :last_name, :city, :region, :tel, :email, :role, :notes])
-    |> validate_required([:first_name, :last_name, :city, :region, :tel, :email, :role, :notes])
+    |> cast(attrs, [:first_name, :last_name, :city, :region, :tel, :email, :linkedin, :last_contact_date, :status, :role, :notes])
+    |> validate_required([:first_name, :last_name, :city, :region, :tel, :email, :linkedin, :last_contact_date, :status, :role, :notes])
   end
 end
