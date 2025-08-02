@@ -11,6 +11,7 @@ defmodule Mcrm.Repo.Migrations.CreateContactinfos do
       add :email, :string
       add :role, :string
       add :notes, :text
+      add :company_id, references(:companies)
 
       timestamps(type: :utc_datetime)
     end

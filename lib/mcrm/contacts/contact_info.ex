@@ -1,5 +1,6 @@
 defmodule Mcrm.Contacts.ContactInfo do
   use Ecto.Schema
+  alias Mcrm.Contacts
   import Ecto.Changeset
 
   schema "contactinfos" do
@@ -14,6 +15,7 @@ defmodule Mcrm.Contacts.ContactInfo do
     field :linkedin, :string
     field :last_contact_date, :date
     field :status, :string
+    belongs_to :company, Contacts.Company
 
     timestamps(type: :utc_datetime)
   end

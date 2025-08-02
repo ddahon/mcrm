@@ -1,0 +1,22 @@
+<.header>
+  Company {@company.id}
+  <:subtitle>This is a company record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/companies/#{@company}/edit"}>
+      <.button>Edit company</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Name">{@company.name}</:item>
+  <:item title="City">{@company.city}</:item>
+  <:item title="Region">{@company.region}</:item>
+  <:item title="Website">{@company.website}</:item>
+  <:item title="Linkedin">{@company.linkedin}</:item>
+  <:item title="Email">{@company.email}</:item>
+  <:item title="Tel">{@company.tel}</:item>
+  <:item title="Sector">{@company.sector}</:item>
+</.list>
+
+<.back navigate={~p"/companies"}>Back to companies</.back>

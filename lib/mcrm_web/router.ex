@@ -20,6 +20,7 @@ defmodule McrmWeb.Router do
     get "/", PageController, :home
 
     resources "/contactinfos", ContactInfoController
+    resources "/companies", CompanyController
   end
 
   # Other scopes may use custom stacks.
