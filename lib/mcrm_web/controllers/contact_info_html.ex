@@ -8,6 +8,7 @@ defmodule McrmWeb.ContactInfoHTML do
   """
   attr :changeset, Ecto.Changeset, required: true
   attr :action, :string, required: true
+  attr :companies, :list, required: true
 
   def contact_info_form(assigns)
 end

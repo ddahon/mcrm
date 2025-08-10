@@ -11,7 +11,8 @@ defmodule McrmWeb.ContactInfoController do
 
   def new(conn, _params) do
     changeset = Contacts.change_contact_info(%ContactInfo{})
-    render(conn, :new, changeset: changeset)
+    companies = Contacts.list_companies() |> Enum.map(fn x -> {x.name, x.id} end)
+    render(conn, :new, changeset: changeset, companies: companies)
   end
 
   def create(conn, %{"contact_info" => contact_info_params}) do
