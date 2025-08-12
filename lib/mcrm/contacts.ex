@@ -114,7 +114,8 @@ defmodule Mcrm.Contacts do
 
   """
   def list_companies do
-    Repo.all(Company)
+    query = from c in Company, preload: :contacts
+    Repo.all(query)
   end
 
   @doc """
@@ -131,7 +132,9 @@ defmodule Mcrm.Contacts do
       ** (Ecto.NoResultsError)
 
   """
-  def get_company!(id), do: Repo.get!(Company, id)
+  def get_company!(id) do
+    Repo.get!(Company, id) |> Repo.preload(:contacts)
+  end
 
   @doc """
   Creates a company.
