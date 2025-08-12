@@ -24,7 +24,13 @@
     Contacts
   </.header>
   <.list>
-    <:item :for={c <- @company.contacts} title={c.first_name <> " " <> c.last_name}></:item> 
+    <:item :for={c <- @company.contacts} title={c.first_name <> " " <> c.last_name}>
+      <div class="block h-full w-full">
+        <.link href={~p"/contactinfos/#{c}"}>
+          <.button>Show</.button> 
+        </.link>
+      </div>
+    </:item> 
   </.list>
 </div>
 
