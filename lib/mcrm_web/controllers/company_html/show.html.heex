@@ -23,15 +23,24 @@
   <.header>
     Contacts
   </.header>
-  <.list>
-    <:item :for={c <- @company.contacts} title={c.first_name <> " " <> c.last_name}>
-      <div class="block h-full w-full">
-        <.link href={~p"/contactinfos/#{c}"}>
-          <.button>Show</.button> 
-        </.link>
+  <.table id="contactinfos" rows={@company.contacts} row_click={&JS.navigate(~p"/contactinfos/#{&1}")}>
+    <:col :let={contact_info} label="First name">{contact_info.first_name}</:col>
+    <:col :let={contact_info} label="Last name">{contact_info.last_name}</:col>
+    <:col :let={contact_info} label="City">{contact_info.city}</:col>
+    <:col :let={contact_info} label="Region">{contact_info.region}</:col>
+    <:col :let={contact_info} label="Tel">{contact_info.tel}</:col>
+    <:action :let={contact_info}>
+      <div class="sr-only">
+        <.link navigate={~p"/contactinfos/#{contact_info}"}>Show</.link>
       </div>
-    </:item> 
-  </.list>
+      <.link navigate={~p"/contactinfos/#{contact_info}/edit"}>Edit</.link>
+    </:action>
+    <:action :let={contact_info}>
+      <.link href={~p"/contactinfos/#{contact_info}"} method="delete" data-confirm="Are you sure?">
+        Delete
+      </.link>
+    </:action>
+  </.table>
 </div>
 
 <.back navigate={~p"/companies"}>Back to companies</.back>

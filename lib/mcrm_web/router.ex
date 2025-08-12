@@ -17,7 +17,7 @@ defmodule McrmWeb.Router do
   scope "/", McrmWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    get "/", CompanyController, :index
 
     resources "/contactinfos", ContactInfoController
     resources "/companies", CompanyController
