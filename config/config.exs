@@ -33,7 +33,7 @@ config :mcrm, Mcrm.Mailer, adapter: Swoosh.Adapters.Local
 
 # gettext config
 config :mcrm, McrmWeb.Gettext, locales: ~w(en fr)
-config :gettext, :default_locale, "fr"
+config :gettext, :default_locale, "en"
 
 # Configure esbuild (the version is required)
 config :esbuild,
