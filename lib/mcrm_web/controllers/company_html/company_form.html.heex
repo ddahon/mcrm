@@ -2,15 +2,15 @@
   <.error :if={@changeset.action}>
     Oops, something went wrong! Please check the errors below.
   </.error>
-  <.input field={f[:name]} type="text" label="Name" />
-  <.input field={f[:city]} type="text" label="City" />
-  <.input field={f[:region]} type="text" label="Region" />
-  <.input field={f[:website]} type="text" label="Website" />
-  <.input field={f[:linkedin]} type="text" label="Linkedin" />
-  <.input field={f[:email]} type="text" label="Email" />
-  <.input field={f[:tel]} type="text" label="Tel" />
-  <.input field={f[:sector]} type="text" label="Sector" />
+  <.input field={f[:name]} type="text" label={gettext("Name")} />
+  <.input field={f[:city]} type="text" label={gettext("City")} />
+  <.input field={f[:region]} type="text" label={gettext("Region")} />
+  <.input field={f[:website]} type="text" label={gettext("Website")} />
+  <.input field={f[:linkedin]} type="text" label={gettext("Linkedin")} />
+  <.input field={f[:email]} type="text" label={gettext("Email")} />
+  <.input field={f[:tel]} type="text" label={gettext("Tel")} />
+  <.input field={f[:sector]} type="text" label={gettext("Sector")} />
   <:actions>
-    <.button>Save Company</.button>
+    <.button>{gettext("Save Company")}</.button>
   </:actions>
 </.simple_form>

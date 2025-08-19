@@ -2,20 +2,20 @@
   <.error :if={@changeset.action}>
     Oops, something went wrong! Please check the errors below.
   </.error>
-  <.input field={f[:first_name]} type="text" label="First name" />
-  <.input field={f[:last_name]} type="text" label="Last name" />
-  <.input field={f[:city]} type="text" label="City" />
-  <.input field={f[:region]} type="text" label="Region" />
-  <.input field={f[:tel]} type="text" label="Tel" />
-  <.input field={f[:email]} type="text" label="Email" />
-  <.input field={f[:linkedin]} type="text" label="Linkedin" />
-  <.input field={f[:last_contact_date]} type="date" label="Last contact date" />
-  <.input field={f[:status]} type="text" label="Status" />
-  <.input field={f[:role]} type="text" label="Role" />
-  <.input field={f[:notes]} type="text" label="Notes" />
-  <.input field={f[:company_id]} type="select" label="Company" options={@companies} />
+  <.input field={f[:first_name]} type="text" label={gettext("First name")} />
+  <.input field={f[:last_name]} type="text" label={gettext("Last name")} />
+  <.input field={f[:city]} type="text" label={gettext("City")} />
+  <.input field={f[:region]} type="text" label={gettext("Region")} />
+  <.input field={f[:tel]} type="text" label={gettext("Tel")} />
+  <.input field={f[:email]} type="text" label={gettext("Email")} />
+  <.input field={f[:linkedin]} type="text" label={gettext("Linkedin")} />
+  <.input field={f[:last_contact_date]} type="date" label={gettext("Last contact date")} />
+  <.input field={f[:status]} type="text" label={gettext("Status")} />
+  <.input field={f[:role]} type="text" label={gettext("Role")} />
+  <.input field={f[:notes]} type="text" label={gettext("Notes")} />
+  <.input field={f[:company_id]} type="select" label={gettext("Company")} options={@companies} />
   
   <:actions>
-    <.button>Save Contact info</.button>
+    <.button>{gettext("Save Contact info")}</.button>
   </:actions>
 </.simple_form>

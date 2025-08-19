@@ -1,46 +1,45 @@
 <.header>
-  Company {@company.id}
-  <:subtitle>This is a company record from your database.</:subtitle>
+  {gettext("Company")} {@company.id}
   <:actions>
     <.link href={~p"/companies/#{@company}/edit"}>
-      <.button>Edit company</.button>
+      <.button>{gettext("Edit company")}</.button>
     </.link>
   </:actions>
 </.header>
 
 <.list>
-  <:item title="Name">{@company.name}</:item>
-  <:item title="City">{@company.city}</:item>
-  <:item title="Region">{@company.region}</:item>
-  <:item title="Website">{@company.website}</:item>
-  <:item title="Linkedin">{@company.linkedin}</:item>
-  <:item title="Email">{@company.email}</:item>
-  <:item title="Tel">{@company.tel}</:item>
-  <:item title="Sector">{@company.sector}</:item>
+  <:item title={gettext("Name")}>{@company.name}</:item>
+  <:item title={gettext("City")}>{@company.city}</:item>
+  <:item title={gettext("Region")}>{@company.region}</:item>
+  <:item title={gettext("Website")}>{@company.website}</:item>
+  <:item title={gettext("Linkedin")}>{@company.linkedin}</:item>
+  <:item title={gettext("Email")}>{@company.email}</:item>
+  <:item title={gettext("Tel")}>{@company.tel}</:item>
+  <:item title={gettext("Sector")}>{@company.sector}</:item>
 </.list>
 
 <div class="mt-10">
   <.header>
-    Contacts
+    {gettext("Contacts")}
   </.header>
   <.table id="contactinfos" rows={@company.contacts} row_click={&JS.navigate(~p"/contactinfos/#{&1}")}>
-    <:col :let={contact_info} label="First name">{contact_info.first_name}</:col>
-    <:col :let={contact_info} label="Last name">{contact_info.last_name}</:col>
-    <:col :let={contact_info} label="City">{contact_info.city}</:col>
-    <:col :let={contact_info} label="Region">{contact_info.region}</:col>
-    <:col :let={contact_info} label="Tel">{contact_info.tel}</:col>
+    <:col :let={contact_info} label={gettext("First name")}>{contact_info.first_name}</:col>
+    <:col :let={contact_info} label={gettext("Last name")}>{contact_info.last_name}</:col>
+    <:col :let={contact_info} label={gettext("City")}>{contact_info.city}</:col>
+    <:col :let={contact_info} label={gettext("Region")}>{contact_info.region}</:col>
+    <:col :let={contact_info} label={gettext("Tel")}>{contact_info.tel}</:col>
     <:action :let={contact_info}>
       <div class="sr-only">
-        <.link navigate={~p"/contactinfos/#{contact_info}"}>Show</.link>
+        <.link navigate={~p"/contactinfos/#{contact_info}"}>{gettext("Show")}</.link>
       </div>
-      <.link navigate={~p"/contactinfos/#{contact_info}/edit"}>Edit</.link>
+      <.link navigate={~p"/contactinfos/#{contact_info}/edit"}>{gettext("Edit")}</.link>
     </:action>
     <:action :let={contact_info}>
-      <.link href={~p"/contactinfos/#{contact_info}"} method="delete" data-confirm="Are you sure?">
-        Delete
+      <.link href={~p"/contactinfos/#{contact_info}"} method="delete" data-confirm={gettext("Are you sure?")}>
+        {gettext("Delete")}
       </.link>
     </:action>
   </.table>
 </div>
 
-<.back navigate={~p"/companies"}>Back to companies</.back>
+<.back navigate={~p"/companies"}>{gettext("Back to companies")}</.back>
