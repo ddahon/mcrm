@@ -1,25 +1,25 @@
 <.header>
-  Contact info {@contact_info.id}
-  <:subtitle>This is a contact_info record from your database.</:subtitle>
+  {gettext("Contact info")} {@contact_info.id}
+  <:subtitle>{gettext("This is a contact_info record from your database.")}</:subtitle>
   <:actions>
     <.link href={~p"/contactinfos/#{@contact_info}/edit"}>
-      <.button>Edit contact_info</.button>
+      <.button>{gettext("Edit contact_info")}</.button>
     </.link>
   </:actions>
 </.header>
 
 <.list>
-  <:item title="First name">{@contact_info.first_name}</:item>
-  <:item title="Last name">{@contact_info.last_name}</:item>
-  <:item title="City">{@contact_info.city}</:item>
-  <:item title="Region">{@contact_info.region}</:item>
-  <:item title="Tel">{@contact_info.tel}</:item>
-  <:item title="Email">{@contact_info.email}</:item>
-  <:item title="Linkedin">{@contact_info.linkedin}</:item>
-  <:item title="Last contact date">{@contact_info.last_contact_date}</:item>
-  <:item title="Status">{@contact_info.status}</:item>
-  <:item title="Role">{@contact_info.role}</:item>
-  <:item title="Notes">{@contact_info.notes}</:item>
+  <:item title={gettext("First name")}>{@contact_info.first_name}</:item>
+  <:item title={gettext("Last name")}>{@contact_info.last_name}</:item>
+  <:item title={gettext("City")}>{@contact_info.city}</:item>
+  <:item title={gettext("Region")}>{@contact_info.region}</:item>
+  <:item title={gettext("Tel")}>{@contact_info.tel}</:item>
+  <:item title={gettext("Email")}>{@contact_info.email}</:item>
+  <:item title={gettext("Linkedin")}>{@contact_info.linkedin}</:item>
+  <:item title={gettext("Last contact date")}>{@contact_info.last_contact_date}</:item>
+  <:item title={gettext("Status")}>{@contact_info.status}</:item>
+  <:item title={gettext("Role")}>{@contact_info.role}</:item>
+  <:item title={gettext("Notes")}>{@contact_info.notes}</:item>
 </.list>
 
-<.back navigate={~p"/contactinfos"}>Back to contactinfos</.back>
+<.back navigate={~p"/contactinfos"}>{gettext("Back to contactinfos")}</.back>
