@@ -22,7 +22,6 @@ i18n: add locale switcher (https://lokalise.com/blog/localization-of-phoenix-app
 
 # TODO
 - multiple chronological notes
-- i18n
 - deploy
 - CSV/google sheets integration (load/export) 
 - generate mail templates
