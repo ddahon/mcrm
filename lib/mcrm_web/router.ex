@@ -19,10 +19,15 @@ defmodule McrmWeb.Router do
     pipe_through :browser
 
     get "/", CompanyController, :index
+    get "/contactinfos/import", ContactInfoController, :import
+
+    post "/contactinfos/import", ContactInfoController, :process_import
 
     resources "/contactinfos", ContactInfoController
     resources "/companies", CompanyController
+
   end
+
 
   # Other scopes may use custom stacks.
   # scope "/api", McrmWeb do

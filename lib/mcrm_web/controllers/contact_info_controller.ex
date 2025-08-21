@@ -1,6 +1,7 @@
 defmodule McrmWeb.ContactInfoController do
   use McrmWeb, :controller
 
+  require Logger
   alias Mcrm.Contacts
   alias Mcrm.Contacts.ContactInfo
 
@@ -58,6 +59,16 @@ defmodule McrmWeb.ContactInfoController do
 
     conn
     |> put_flash(:info, "Contact info deleted successfully.")
+    |> redirect(to: ~p"/contactinfos")
+  end
+
+  def import(conn, _params) do
+    render(conn, :import)
+  end
+
+  def process_import(conn, _params) do
+    Logger.debug("received CSV import") #TODO: extract csv from multipart and process is
+    conn
     |> redirect(to: ~p"/contactinfos")
   end
 end

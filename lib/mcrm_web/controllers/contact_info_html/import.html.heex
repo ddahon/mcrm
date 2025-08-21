@@ -1,0 +1,5 @@
+<.form :let={f} for={%{}} action={~p"/#{@conn.path_info}"} multipart>
+  <.input field={f[:file]} type="file" label="CSV" />
+
+  <.button>{gettext("Import")}</.button>
+</.form>
