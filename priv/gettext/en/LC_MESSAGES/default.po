@@ -82,6 +82,7 @@ msgstr ""
 #: lib/mcrm_web/controllers/company_html/show.html.heex:12
 #: lib/mcrm_web/controllers/company_html/show.html.heex:28
 #: lib/mcrm_web/controllers/contact_info_html/contact_info_form.html.heex:7
+#: lib/mcrm_web/controllers/contact_info_html/import.html.heex:13
 #: lib/mcrm_web/controllers/contact_info_html/index.html.heex:13
 #: lib/mcrm_web/controllers/contact_info_html/show.html.heex:14
 #, elixir-autogen, elixir-format
@@ -107,6 +108,7 @@ msgstr ""
 
 #: lib/mcrm_web/controllers/company_html/index.html.heex:22
 #: lib/mcrm_web/controllers/company_html/show.html.heex:39
+#: lib/mcrm_web/controllers/contact_info_html/import.html.heex:24
 #: lib/mcrm_web/controllers/contact_info_html/index.html.heex:24
 #, elixir-autogen, elixir-format
 msgid "Delete"
@@ -114,6 +116,7 @@ msgstr ""
 
 #: lib/mcrm_web/controllers/company_html/index.html.heex:18
 #: lib/mcrm_web/controllers/company_html/show.html.heex:35
+#: lib/mcrm_web/controllers/contact_info_html/import.html.heex:20
 #: lib/mcrm_web/controllers/contact_info_html/index.html.heex:20
 #, elixir-autogen, elixir-format
 msgid "Edit"
@@ -149,6 +152,7 @@ msgstr ""
 
 #: lib/mcrm_web/controllers/company_html/show.html.heex:26
 #: lib/mcrm_web/controllers/contact_info_html/contact_info_form.html.heex:5
+#: lib/mcrm_web/controllers/contact_info_html/import.html.heex:11
 #: lib/mcrm_web/controllers/contact_info_html/index.html.heex:11
 #: lib/mcrm_web/controllers/contact_info_html/show.html.heex:12
 #, elixir-autogen, elixir-format
@@ -163,6 +167,7 @@ msgstr ""
 
 #: lib/mcrm_web/controllers/company_html/show.html.heex:27
 #: lib/mcrm_web/controllers/contact_info_html/contact_info_form.html.heex:6
+#: lib/mcrm_web/controllers/contact_info_html/import.html.heex:12
 #: lib/mcrm_web/controllers/contact_info_html/index.html.heex:12
 #: lib/mcrm_web/controllers/contact_info_html/show.html.heex:13
 #, elixir-autogen, elixir-format
@@ -190,6 +195,7 @@ msgstr ""
 msgid "New Company"
 msgstr ""
 
+#: lib/mcrm_web/controllers/contact_info_html/import.html.heex:5
 #: lib/mcrm_web/controllers/contact_info_html/index.html.heex:5
 #: lib/mcrm_web/controllers/contact_info_html/new.html.heex:2
 #, elixir-autogen, elixir-format
@@ -212,6 +218,7 @@ msgstr ""
 #: lib/mcrm_web/controllers/company_html/show.html.heex:13
 #: lib/mcrm_web/controllers/company_html/show.html.heex:29
 #: lib/mcrm_web/controllers/contact_info_html/contact_info_form.html.heex:8
+#: lib/mcrm_web/controllers/contact_info_html/import.html.heex:14
 #: lib/mcrm_web/controllers/contact_info_html/index.html.heex:14
 #: lib/mcrm_web/controllers/contact_info_html/show.html.heex:15
 #, elixir-autogen, elixir-format
@@ -242,6 +249,7 @@ msgstr ""
 
 #: lib/mcrm_web/controllers/company_html/index.html.heex:16
 #: lib/mcrm_web/controllers/company_html/show.html.heex:33
+#: lib/mcrm_web/controllers/contact_info_html/import.html.heex:18
 #: lib/mcrm_web/controllers/contact_info_html/index.html.heex:18
 #, elixir-autogen, elixir-format
 msgid "Show"
@@ -257,6 +265,7 @@ msgstr ""
 #: lib/mcrm_web/controllers/company_html/show.html.heex:17
 #: lib/mcrm_web/controllers/company_html/show.html.heex:30
 #: lib/mcrm_web/controllers/contact_info_html/contact_info_form.html.heex:9
+#: lib/mcrm_web/controllers/contact_info_html/import.html.heex:15
 #: lib/mcrm_web/controllers/contact_info_html/index.html.heex:15
 #: lib/mcrm_web/controllers/contact_info_html/show.html.heex:16
 #, elixir-autogen, elixir-format
@@ -283,4 +292,9 @@ msgstr ""
 #: lib/mcrm_web/components/layouts/app.html.heex:10
 #, elixir-autogen, elixir-format, fuzzy
 msgid "Companies"
+msgstr ""
+
+#: lib/mcrm_web/controllers/contact_info_html/index.html.heex:2
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Listing Contactinfos"
 msgstr ""
