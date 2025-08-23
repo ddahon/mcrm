@@ -14,14 +14,26 @@
       </.link>
     </div>
     <div class="flex gap-2">
-      <.icon name="hero-flag" class="self-center"/>
-      <.link href={~p"/#{@conn.path_info}?locale=#{"en"}"} >
-        <.button class={if @conn.params["locale"] != "en" && @conn.cookies["locale"] != "en", do: "bg-zinc-500", else: ""}>en</.button>
-      </.link>
-      <.link href={~p"/#{@conn.path_info}?locale=#{"fr"}"}>
-        <.button class={if @conn.params["locale"] != "fr" && @conn.cookies["locale"] != "fr", do: "bg-zinc-500", else: ""}>fr</.button>
-      </.link>
-    </div> 
+        <.icon name="hero-flag" class="self-center"/>
+        
+        <%= if assigns[:conn] do %>
+          <!-- Regular controller context - use @conn -->
+          <.link href={~p"/#{@conn.path_info}?locale=en"} >
+            <.button class={if @conn.params["locale"] != "en" && @conn.cookies["locale"] != "en", do: "bg-zinc-500", else: ""}>en</.button>
+          </.link>
+          <.link href={~p"/#{@conn.path_info}?locale=fr"}>
+            <.button class={if @conn.params["locale"] != "fr" && @conn.cookies["locale"] != "fr", do: "bg-zinc-500", else: ""}>fr</.button>
+          </.link>
+        <% else %>
+          <!-- LiveView context - use assigns -->
+          <.link href={~p"/#{@current_path}?locale=en"} >
+            <.button class={if @current_locale != "en", do: "bg-zinc-500", else: ""}>en</.button>
+          </.link>
+          <.link href={~p"/#{@current_path}?locale=fr"}>
+            <.button class={if @current_locale != "fr", do: "bg-zinc-500", else: ""}>fr</.button>
+          </.link>
+        <% end %>
+    </div>
   </div>
 </header>
 <main class="px-4 py-20 sm:px-6 lg:px-8">
