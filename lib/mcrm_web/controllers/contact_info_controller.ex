@@ -70,8 +70,8 @@ defmodule McrmWeb.ContactInfoController do
     path
     |> File.stream!
     |> CSV.decode(headers: [:first_name, :last_name, :city, :region, :tel, :email, :linkedin, :last_contact_date, :status, :role, :notes, :company_id])
-    |> Enum.filter(fn x -> x = %{:ok => _contact_info} end)
-    |> Enum.map(Mcrm.Contacts.create_contact_info)
+    |> Enum.filter(fn x -> {:ok, _} = x end)
+    |> Enum.map(fn {:ok, contact} -> Mcrm.Contacts.create_contact_info(contact) end)
 
     conn
     |> redirect(to: ~p"/contactinfos")
