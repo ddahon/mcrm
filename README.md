@@ -17,13 +17,6 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
 
-# TODO
-- multiple chronological notes
-- deploy
-  - CSV/google sheets integration (load/export) 
-- generate mail templates
-- clarify "actions"
-- sorting in all the tables
 
 # Notes
 ## Contact
