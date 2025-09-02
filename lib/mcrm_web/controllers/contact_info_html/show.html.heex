@@ -20,6 +20,7 @@
   <:item title={gettext("Status")}>{@contact_info.status}</:item>
   <:item title={gettext("Role")}>{@contact_info.role}</:item>
   <:item title={gettext("Notes")}>{@contact_info.notes}</:item>
+  <:item title={gettext("Company")}>{Mcrm.Contacts.get_company!(@contact_info.company_id).name}</:item>
 </.list>
 
 <.back navigate={~p"/contactinfos"}>{gettext("Back to contactinfos")}</.back>
