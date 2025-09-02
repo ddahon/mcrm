@@ -13,7 +13,7 @@
   <.input field={f[:status]} type="text" label={gettext("Status")} />
   <.input field={f[:role]} type="text" label={gettext("Role")} />
   <.input field={f[:notes]} type="text" label={gettext("Notes")} />
-  <.input field={f[:company_id]} type="select" label={gettext("Company")} options={@companies} />
+  <.input field={f[:company_id]} type="select" label={gettext("Company")} options={Mcrm.Contacts.get_companies_options()} />
   
   <:actions>
     <.button>{gettext("Save Contact info")}</.button>

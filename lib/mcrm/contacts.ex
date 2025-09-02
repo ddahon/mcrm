@@ -200,4 +200,11 @@ defmodule Mcrm.Contacts do
   def change_company(%Company{} = company, attrs \\ %{}) do
     Company.changeset(company, attrs)
   end
+
+  @doc """
+  Returns all the companies to be used as options in a select input.
+  """
+  def get_companies_options() do
+    list_companies() |> Enum.map(fn x -> {x.name, x.id} end)
+  end
 end

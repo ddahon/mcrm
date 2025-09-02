@@ -3,6 +3,6 @@
   <:subtitle>{gettext("Use this form to manage contact_info records in your database.")}</:subtitle>
 </.header>
 
-<.contact_info_form changeset={@changeset} action={~p"/contactinfos"} companies={@companies}/>
+<.contact_info_form changeset={@changeset} action={~p"/contactinfos"} />
 
 <.back navigate={~p"/contactinfos"}>{gettext("Back to contactinfos")}</.back>
