@@ -10,4 +10,3 @@
 - button to copy each field
 
 ## bugs
-- fix edit contact
