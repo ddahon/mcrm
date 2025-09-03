@@ -597,6 +597,21 @@ defmodule McrmWeb.CoreComponents do
     """
   end
 
+  @doc """
+  Renders a copy to clipboard button
+
+  ## Examples
+
+      <.clipboardbutton content="content to copy"/>
+  """
+  attr :content, :string, required: true
+
+  def clipboardbutton(assigns) do
+    ~H"""
+    <button>Copy</button>
+    """
+  end
+
   ## JS Commands
 
   def show(js \\ %JS{}, selector) do
