@@ -537,9 +537,12 @@ defmodule McrmWeb.CoreComponents do
     ~H"""
     <div class="mt-14">
       <dl class="-my-4 divide-y divide-zinc-100">
-        <div :for={item <- @item} class="flex gap-4 py-4 text-sm leading-6 sm:gap-8">
+        <div :for={item <- @item} class="group flex gap-4 py-4 text-sm leading-6 sm:gap-8">
           <dt class="w-1/4 flex-none text-zinc-500">{item.title}</dt>
           <dd class="text-zinc-700">{render_slot(item)}</dd>
+          <clipboard-copy value={render_slot(item)} class="invisible group-hover:visible cursor-pointer rounded p-1 hover:bg-gray-200 ml-auto mr-20">
+            <.icon name="hero-clipboard-document" class="h-4 w-4"/>
+          </clipboard-copy>
         </div>
       </dl>
     </div>
@@ -594,21 +597,6 @@ defmodule McrmWeb.CoreComponents do
   def icon(%{name: "hero-" <> _} = assigns) do
     ~H"""
     <span class={[@name, @class]} />
-    """
-  end
-
-  @doc """
-  Renders a copy to clipboard button
-
-  ## Examples
-
-      <.clipboardbutton content="content to copy"/>
-  """
-  attr :content, :string, required: true
-
-  def clipboardbutton(assigns) do
-    ~H"""
-    <button>Copy</button>
     """
   end
 
