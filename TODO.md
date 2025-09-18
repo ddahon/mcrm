@@ -7,7 +7,5 @@
 - clarify "actions"
 - sorting in all the tables
 - searchbar
-- button to copy each field
-  - wip: implement functionality in core_components/clipboard
 
 ## bugs
