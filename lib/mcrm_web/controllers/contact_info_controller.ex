@@ -66,18 +66,8 @@ defmodule McrmWeb.ContactInfoController do
     render(conn, :import)
   end
 
-  def process_import(conn, %{"file" => %Plug.Upload{:path => path}}) do
-    path
-    |> File.stream!
-    |> CSV.decode(headers: true)
-    |> Enum.map(fn x -> case x do
-      {:ok, contact} ->
-        IO.inspect(contact)
-        |> Mcrm.Contacts.create_contact_info
-      {:error, error} -> Logger.debug(:warning, error)
-    end
-  end)
-
+  def process_import(conn, _params) do
+    Logger.debug("received CSV import") #TODO: extract csv from multipart and process is
     conn
     |> redirect(to: ~p"/contactinfos")
   end
