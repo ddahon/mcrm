@@ -59,7 +59,8 @@ defmodule Mcrm.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
-      {:csv, "~> 3.2.2"}
+      {:csv, "~> 3.2.2"},
+      {:solid, "~> 1.1.1"}
     ]
   end
 
