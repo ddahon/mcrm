@@ -1,6 +1,6 @@
 defmodule McrmWeb.ContactInfoHTML do
   use McrmWeb, :html
-
+  alias McrmWeb.MailTemplateHTML
   embed_templates "contact_info_html/*"
 
   @doc """

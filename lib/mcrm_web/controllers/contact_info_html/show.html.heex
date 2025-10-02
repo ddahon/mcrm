@@ -1,10 +1,11 @@
 <.header>
   {gettext("Contact info")} {@contact_info.id}
-  <:subtitle>{gettext("This is a contact_info record from your database.")}</:subtitle>
   <:actions>
     <.link href={~p"/contactinfos/#{@contact_info}/edit"}>
-      <.button>{gettext("Edit contact_info")}</.button>
+      <.button>{gettext("Edit")}</.button>
     </.link>
+    <.button phx-click={show_modal("templates-modal")}>{gettext("Templates")}</.button>
+    <MailTemplateHTML.generate_template_modal id="templates-modal"/>
   </:actions>
 </.header>
 

@@ -1,8 +1,8 @@
 <.header>
-  New Mail template
-  <:subtitle>Use this form to manage mail_template records in your database.</:subtitle>
+  {gettext("New Mail template")}
+  <:subtitle>{gettext("Use this form to manage mail_template records in your database.")}</:subtitle>
 </.header>
 
 <.mail_template_form changeset={@changeset} action={~p"/mailtemplates"} />
 
-<.back navigate={~p"/mailtemplates"}>Back to mailtemplates</.back>
+<.back navigate={~p"/mailtemplates"}>{gettext("Back to mailtemplates")}</.back>

@@ -28,6 +28,7 @@ defmodule McrmWeb.Router do
 
     resources "/contactinfos", ContactInfoController
     resources "/companies", CompanyController
+    resources "/mailtemplates", MailTemplateController
 
   end
 

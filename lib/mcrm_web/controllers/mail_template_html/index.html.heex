@@ -1,24 +1,24 @@
 <.header>
-  Listing Mailtemplates
+  {gettext("Listing mail templates")}
   <:actions>
     <.link href={~p"/mailtemplates/new"}>
-      <.button>New Mail template</.button>
+      <.button>{gettext("New Mail template")}</.button>
     </.link>
   </:actions>
 </.header>
 
 <.table id="mailtemplates" rows={@mailtemplates} row_click={&JS.navigate(~p"/mailtemplates/#{&1}")}>
-  <:col :let={mail_template} label="Name">{mail_template.name}</:col>
-  <:col :let={mail_template} label="Content">{mail_template.content}</:col>
+  <:col :let={mail_template} label={gettext("Name")}>{mail_template.name}</:col>
+  <:col :let={mail_template} label={gettext("Content")}>{mail_template.content}</:col>
   <:action :let={mail_template}>
     <div class="sr-only">
-      <.link navigate={~p"/mailtemplates/#{mail_template}"}>Show</.link>
+      <.link navigate={~p"/mailtemplates/#{mail_template}"}>{gettext("Show")}</.link>
     </div>
-    <.link navigate={~p"/mailtemplates/#{mail_template}/edit"}>Edit</.link>
+    <.link navigate={~p"/mailtemplates/#{mail_template}/edit"}>{gettext("Edit")}</.link>
   </:action>
   <:action :let={mail_template}>
-    <.link href={~p"/mailtemplates/#{mail_template}"} method="delete" data-confirm="Are you sure?">
-      Delete
+    <.link href={~p"/mailtemplates/#{mail_template}"} method="delete" data-confirm={gettext("Are you sure?")}>
+      {gettext("Delete")}
     </.link>
   </:action>
 </.table>
