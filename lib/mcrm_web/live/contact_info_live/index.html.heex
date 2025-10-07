@@ -1,0 +1,48 @@
+<.header>
+  Listing Contactinfos
+  <:actions>
+    <.link patch={~p"/contactinfos/new"}>
+      <.button>New Contact info</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table
+  id="contactinfos"
+  rows={@streams.contactinfos}
+  row_click={fn {_id, contact_info} -> JS.navigate(~p"/contactinfos/#{contact_info}") end}
+>
+  <:col :let={{_id, contact_info}} label="First name">{contact_info.first_name}</:col>
+  <:col :let={{_id, contact_info}} label="Last name">{contact_info.last_name}</:col>
+  <:col :let={{_id, contact_info}} label="City">{contact_info.city}</:col>
+  <:col :let={{_id, contact_info}} label="Region">{contact_info.region}</:col>
+  <:col :let={{_id, contact_info}} label="Tel">{contact_info.tel}</:col>
+  <:col :let={{_id, contact_info}} label="Email">{contact_info.email}</:col>
+  <:col :let={{_id, contact_info}} label="Role">{contact_info.role}</:col>
+  <:col :let={{_id, contact_info}} label="Notes">{contact_info.notes}</:col>
+  <:action :let={{_id, contact_info}}>
+    <div class="sr-only">
+      <.link navigate={~p"/contactinfos/#{contact_info}"}>Show</.link>
+    </div>
+    <.link patch={~p"/contactinfos/#{contact_info}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={{id, contact_info}}>
+    <.link
+      phx-click={JS.push("delete", value: %{id: contact_info.id}) |> hide("##{id}")}
+      data-confirm="Are you sure?"
+    >
+      Delete
+    </.link>
+  </:action>
+</.table>
+
+<.modal :if={@live_action in [:new, :edit]} id="contact_info-modal" show on_cancel={JS.patch(~p"/contactinfos")}>
+  <.live_component
+    module={McrmWeb.ContactInfoLive.FormComponent}
+    id={@contact_info.id || :new}
+    title={@page_title}
+    action={@live_action}
+    contact_info={@contact_info}
+    patch={~p"/contactinfos"}
+  />
+</.modal>

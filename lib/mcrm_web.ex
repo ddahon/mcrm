@@ -53,7 +53,7 @@ defmodule McrmWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {McrmWeb.Layouts, :app}
+        layout: {McrmWeb.LiveLayouts, :app}
 
       unquote(html_helpers())
     end

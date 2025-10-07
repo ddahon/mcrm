@@ -22,6 +22,14 @@ defmodule Mcrm.Templates do
   end
 
   @doc """
+  Returns the list of mailtemplates to be used as select options.
+
+  """
+  def list_mailtemplate_options do
+    list_mailtemplates() |> Enum.map(fn x -> {x.name, x.id} end)
+  end
+
+  @doc """
   Gets a single mail_template.
 
   Raises `Ecto.NoResultsError` if the Mail template does not exist.

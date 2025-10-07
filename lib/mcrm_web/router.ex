@@ -26,7 +26,8 @@ defmodule McrmWeb.Router do
 
     post "/contactinfos/import", ContactInfoController, :process_import
 
-    resources "/contactinfos", ContactInfoController
+    resources "/contactinfos", ContactInfoController, except: [:show]
+    live "/contactinfos/:id", ContactInfoLive.Show, :show
     resources "/companies", CompanyController
     resources "/mailtemplates", MailTemplateController
 

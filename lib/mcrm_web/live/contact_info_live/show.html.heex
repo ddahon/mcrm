@@ -1,0 +1,33 @@
+<.header>
+  Contact info {@contact_info.id}
+  <:subtitle>This is a contact_info record from your database.</:subtitle>
+  <:actions>
+    <.link patch={~p"/contactinfos/#{@contact_info}/show/edit"} phx-click={JS.push_focus()}>
+      <.button>Edit contact_info</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="First name">{@contact_info.first_name}</:item>
+  <:item title="Last name">{@contact_info.last_name}</:item>
+  <:item title="City">{@contact_info.city}</:item>
+  <:item title="Region">{@contact_info.region}</:item>
+  <:item title="Tel">{@contact_info.tel}</:item>
+  <:item title="Email">{@contact_info.email}</:item>
+  <:item title="Role">{@contact_info.role}</:item>
+  <:item title="Notes">{@contact_info.notes}</:item>
+</.list>
+
+<.back navigate={~p"/contactinfos"}>Back to contactinfos</.back>
+
+<.modal :if={@live_action == :edit} id="contact_info-modal" show on_cancel={JS.patch(~p"/contactinfos/#{@contact_info}")}>
+  <.live_component
+    module={McrmWeb.ContactInfoLive.FormComponent}
+    id={@contact_info.id}
+    title={@page_title}
+    action={@live_action}
+    contact_info={@contact_info}
+    patch={~p"/contactinfos/#{@contact_info}"}
+  />
+</.modal>

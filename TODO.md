@@ -1,8 +1,9 @@
 # TODO
 ## doing
 - generate templates
-  - compelte modal in contactinfos: add dropdown to select template
-  - complete modal in contactinfos: add button to generate template
+  - fix layout for liveview
+  - create livecomponent for generate template modal
+  - add button to show modal
 
 ## todo
 - multiple chronological notes
