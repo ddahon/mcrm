@@ -18,4 +18,5 @@ defmodule McrmWeb.ContactInfoLive.Show do
 
   defp page_title(:show), do: "Show Contact info"
   defp page_title(:edit), do: "Edit Contact info"
+  defp page_title(:render_template), do: "Render Template"
 end

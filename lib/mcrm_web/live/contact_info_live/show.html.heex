@@ -5,6 +5,9 @@
     <.link patch={~p"/contactinfos/#{@contact_info}/show/edit"} phx-click={JS.push_focus()}>
       <.button>Edit contact_info</.button>
     </.link>
+    <.link patch={~p"/contactinfos/#{@contact_info}/show/render_template"} phx-click={JS.push_focus()}>
+      <.button>{gettext("Render template")}</.button>
+    </.link>
   </:actions>
 </.header>
 
@@ -24,6 +27,17 @@
 <.modal :if={@live_action == :edit} id="contact_info-modal" show on_cancel={JS.patch(~p"/contactinfos/#{@contact_info}")}>
   <.live_component
     module={McrmWeb.ContactInfoLive.FormComponent}
+    id={@contact_info.id}
+    title={@page_title}
+    action={@live_action}
+    contact_info={@contact_info}
+    patch={~p"/contactinfos/#{@contact_info}"}
+  />
+</.modal>
+
+<.modal :if={@live_action == :render_template} id="render_template-modal" show on_cancel={JS.patch(~p"/contactinfos/#{@contact_info}")}>
+  <.live_component
+    module={McrmWeb.ContactInfoLive.GenerateTemplateComponent}
     id={@contact_info.id}
     title={@page_title}
     action={@live_action}

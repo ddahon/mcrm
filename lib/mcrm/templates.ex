@@ -4,6 +4,7 @@ defmodule Mcrm.Templates do
   """
 
   import Ecto.Query, warn: false
+  require Logger
   alias Mcrm.Repo
 
   alias Mcrm.Templates.MailTemplate
@@ -108,5 +109,13 @@ defmodule Mcrm.Templates do
   """
   def change_mail_template(%MailTemplate{} = mail_template, attrs \\ %{}) do
     MailTemplate.changeset(mail_template, attrs)
+  end
+
+  @doc """
+  Renders a template
+
+  """
+  def render_template(id) do
+    {:ok, "TODO: Render template #{id}"}
   end
 end
