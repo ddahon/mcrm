@@ -40,7 +40,7 @@ defmodule McrmWeb.ContactInfoLive.GenerateTemplateComponent do
   end
 
   defp render_template(socket, template_id) do
-    case Templates.render_template(template_id) do
+    case Templates.render_template(template_id, socket.assigns.contact_info) do
       {:ok, result} ->
         {:noreply,
          assign(socket, rendered_template: result)}

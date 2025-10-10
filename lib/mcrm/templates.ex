@@ -115,7 +115,12 @@ defmodule Mcrm.Templates do
   Renders a template
 
   """
-  def render_template(id) do
-    {:ok, "TODO: Render template #{id}"}
+  def render_template(id, contact_info) do
+    template = get_mail_template!(id)
+    result = Regex.replace(~r/\$(\w+)/, template.content, fn term, var ->
+      field = String.to_existing_atom(var)
+      Map.get(contact_info, field, term)
+    end)
+    {:ok, result}
   end
 end
