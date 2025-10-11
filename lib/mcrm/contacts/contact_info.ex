@@ -1,5 +1,6 @@
 defmodule Mcrm.Contacts.ContactInfo do
   use Ecto.Schema
+  alias Mcrm.Contacts.ContactInfo
   alias Mcrm.Contacts
   import Ecto.Changeset
 
@@ -23,7 +24,20 @@ defmodule Mcrm.Contacts.ContactInfo do
   @doc false
   def changeset(contact_info, attrs) do
     contact_info
-    |> cast(attrs, [:first_name, :last_name, :city, :region, :tel, :email, :linkedin, :last_contact_date, :status, :role, :notes, :company_id])
+    |> cast(attrs, [
+      :first_name,
+      :last_name,
+      :city,
+      :region,
+      :tel,
+      :email,
+      :linkedin,
+      :last_contact_date,
+      :status,
+      :role,
+      :notes,
+      :company_id
+    ])
     |> validate_required([:first_name, :last_name])
   end
 end

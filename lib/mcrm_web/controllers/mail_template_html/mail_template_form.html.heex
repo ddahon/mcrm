@@ -4,6 +4,12 @@
   </.error>
   <.input field={f[:name]} type="text" label={gettext("Name")} />
   <.input field={f[:content]} type="textarea" label={gettext("Content")} />
+  <p>
+    {gettext("Available fields: ") <>
+      (Mcrm.Templates.available_template_fields(%Mcrm.Contacts.ContactInfo{})
+       |> Enum.map(&("$" <> &1))
+       |> Enum.join(", "))}
+  </p>
   <:actions>
     <.button>{gettext("Save Mail template")}</.button>
   </:actions>

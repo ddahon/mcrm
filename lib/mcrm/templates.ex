@@ -6,6 +6,7 @@ defmodule Mcrm.Templates do
   import Ecto.Query, warn: false
   require Logger
   alias Mcrm.Repo
+  alias Mcrm.Contacts.ContactInfo
 
   alias Mcrm.Templates.MailTemplate
 
@@ -117,10 +118,17 @@ defmodule Mcrm.Templates do
   """
   def render_template(id, contact_info) do
     template = get_mail_template!(id)
-    result = Regex.replace(~r/\$(\w+)/, template.content, fn term, var ->
-      field = String.to_existing_atom(var)
-      Map.get(contact_info, field, term)
-    end)
+
+    result =
+      Regex.replace(~r/\$(\w+)/, template.content, fn term, var ->
+        field = String.to_existing_atom(var)
+        Map.get(contact_info, field, term)
+      end)
+
     {:ok, result}
+  end
+
+  def available_template_fields(%ContactInfo{} = _) do
+    ["first_name", "last_name", "city", "region", "tel", "email", "linkedin", "roles"]
   end
 end
