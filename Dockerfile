@@ -85,6 +85,8 @@ RUN chown nobody /app
 # set runner ENV
 ENV MIX_ENV="prod"
 
+ENV PHX_HOST="https://mcrm.ddahon.com"
+
 # Only copy the final release from the build stage
 COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/mcrm ./
 
