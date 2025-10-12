@@ -34,6 +34,8 @@ RUN mix local.hex --force && \
 # set build ENV
 ENV MIX_ENV="prod"
 
+ENV PHX_HOST="https://mcrm.ddahon.com"
+
 # install mix dependencies
 COPY mix.exs mix.lock ./
 RUN mix deps.get --only $MIX_ENV
