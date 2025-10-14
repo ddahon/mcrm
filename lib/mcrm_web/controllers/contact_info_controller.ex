@@ -72,9 +72,11 @@ defmodule McrmWeb.ContactInfoController do
     |> CSV.decode(headers: true)
     |> Enum.map(fn x -> case x do
       {:ok, contact} ->
-        IO.inspect(contact)
-        |> Mcrm.Contacts.create_contact_info
-      {:error, error} -> Logger.debug(:warning, error)
+        case Mcrm.Contacts.create_contact_info(contact) do
+          {:ok, _} -> Logger.debug("Inserted contact_info")
+          {:error, error} -> Logger.debug("Failed to create contact_info: " <> error)
+        end
+      {:error, error} -> Logger.debug(:warning, "Cannot decode contact from CSV: " <> error)
       end
     end)
     conn
