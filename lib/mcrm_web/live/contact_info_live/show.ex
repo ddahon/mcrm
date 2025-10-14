@@ -5,7 +5,7 @@ defmodule McrmWeb.ContactInfoLive.Show do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, socket}
+    {:ok, assign(socket, :show_reminder_datepicker, false)}
   end
 
   @impl true
@@ -14,6 +14,11 @@ defmodule McrmWeb.ContactInfoLive.Show do
      socket
      |> assign(:page_title, page_title(socket.assigns.live_action))
      |> assign(:contact_info, Contacts.get_contact_info!(id))}
+  end
+
+
+  def handle_event("toggle_reminder_datepicker", _, socket) do
+    {:noreply, update(socket, :show_reminder_datepicker, &(!&1))}
   end
 
   defp page_title(:show), do: "Show Contact info"

@@ -1,6 +1,5 @@
 defmodule Mcrm.Contacts.ContactInfo do
   use Ecto.Schema
-  alias Mcrm.Contacts.ContactInfo
   alias Mcrm.Contacts
   import Ecto.Changeset
 
@@ -17,6 +16,7 @@ defmodule Mcrm.Contacts.ContactInfo do
     field :last_contact_date, :date
     field :status, :string
     belongs_to :company, Contacts.Company
+    has_one :reminder, Contacts.Reminder
 
     timestamps(type: :utc_datetime)
   end
@@ -38,6 +38,5 @@ defmodule Mcrm.Contacts.ContactInfo do
       :notes,
       :company_id
     ])
-    |> validate_required([:first_name, :last_name])
   end
 end
