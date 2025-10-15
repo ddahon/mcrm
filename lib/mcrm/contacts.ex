@@ -207,4 +207,24 @@ defmodule Mcrm.Contacts do
   def get_companies_options() do
     list_companies() |> Enum.map(fn x -> {x.name, x.id} end)
   end
+
+  alias Mcrm.Contacts.Reminder
+
+  @doc """
+  Creates a reminder.
+
+  ## Examples
+
+      iex> create_reminder(%{field: value})
+      {:ok, %Reminder{}}
+
+      iex> create_reminder(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_reminder(attrs \\ %{}) do
+    %Reminder{}
+    |> Reminder.changeset(attrs)
+    |> Repo.insert()
+  end
 end

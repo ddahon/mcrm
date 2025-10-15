@@ -5,7 +5,7 @@ defmodule Mcrm.Repo.Migrations.CreateReminders do
     create table(:reminders) do
       add :description, :string
       add :date, :utc_datetime
-      add :contact_info_id, references(:contactinfos)
+      add :contact_id, references(:contactinfos)
 
       timestamps(type: :utc_datetime)
     end

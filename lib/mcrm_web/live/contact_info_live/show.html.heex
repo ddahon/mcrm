@@ -27,8 +27,20 @@
 
 <div class="mt-10">
   <label for="reminder" class="pr-5">{gettext("Reminder")}</label>
-  <input id="reminder" type="checkbox" class="mr-5" phx-click="toggle_reminder_datepicker" checked={@show_reminder_datepicker}/>
-  <input type="date" :if={@show_reminder_datepicker}/>
+  <input
+    id="reminder"
+    type="checkbox"
+    class="mr-5"
+    phx-click="toggle_reminder_datepicker"
+    checked={@show_reminder_datepicker}
+  />
+  <.form for={%{}} phx-change="pick_reminder_date" class="inline-block">
+  <input
+    :if={@show_reminder_datepicker}
+    name="reminder_date"
+    type="date"
+  />
+  </.form>
 </div>
 
 <.back navigate={~p"/contactinfos"}>Back to contactinfos</.back>

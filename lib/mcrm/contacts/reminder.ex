@@ -14,7 +14,7 @@ defmodule Mcrm.Contacts.Reminder do
   @doc false
   def changeset(reminder, attrs) do
     reminder
-    |> cast(attrs, [:description, :date, :contact_info_id])
-    |> validate_required([:description, :date, :contact_info_id])
+    |> cast(attrs, [:description, :date, :contact_id])
+    |> validate_required([:date, :contact_id])
   end
 end
