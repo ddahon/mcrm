@@ -21,7 +21,8 @@ defmodule McrmWeb.Router do
   scope "/", McrmWeb do
     pipe_through [:browser, :require_authenticated_user]
 
-    get "/", CompanyController, :index
+    get "/", ReminderController, :index
+    get "/reminders", ReminderController, :index
     get "/contactinfos/import", ContactInfoController, :import
 
     post "/contactinfos/import", ContactInfoController, :process_import

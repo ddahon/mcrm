@@ -1,0 +1,12 @@
+<.header>
+  {gettext("Reminder")}
+</.header>
+
+<.table id="reminders" rows={@reminders} row_click={&JS.navigate(~p"/contactinfos/#{&1.contact}")}>
+  <:col :let={reminder} label={gettext("Date")}>{Date.to_iso8601(reminder.date)}</:col>
+  <:col :let={reminder} label={gettext("Contact")}>
+    {"#{reminder.contact.first_name} #{reminder.contact.last_name}"}
+  </:col>
+  <:col :let={reminder} label={gettext("Tel")}>{reminder.contact.tel}</:col>
+  <:col :let={reminder} label={gettext("Mail")}>{reminder.contact.email}</:col>
+</.table>

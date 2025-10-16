@@ -227,4 +227,9 @@ defmodule Mcrm.Contacts do
     |> Reminder.changeset(attrs)
     |> Repo.insert()
   end
+
+  def list_reminders do
+    query = from c in Reminder, preload: :contact
+    Repo.all(query)
+  end
 end
