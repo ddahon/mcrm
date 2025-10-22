@@ -4,8 +4,10 @@ defmodule McrmWeb.ReminderController do
   alias Mcrm.Contacts
 
   def index(conn, _params) do
-    # TODO: |> Enum.filter(&(&1.date == Date.Date.utc_today()))
-    reminders = Contacts.list_reminders()
+    reminders =
+      Contacts.list_reminders()
+      |> Enum.filter(&(DateTime.to_date(&1.date) == Date.utc_today()))
+
     render(conn, :index, reminders: reminders)
   end
 end
