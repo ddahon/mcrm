@@ -232,4 +232,12 @@ defmodule Mcrm.Contacts do
     query = from c in Reminder, preload: :contact
     Repo.all(query)
   end
+
+  def delete_reminder(%Reminder{} = reminder) do
+    Repo.delete(reminder)
+  end
+
+  def get_reminder!(id) do
+    Repo.get!(Reminder, id)
+  end
 end

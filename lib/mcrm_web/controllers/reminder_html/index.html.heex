@@ -9,4 +9,13 @@
   </:col>
   <:col :let={reminder} label={gettext("Tel")}>{reminder.contact.tel}</:col>
   <:col :let={reminder} label={gettext("Mail")}>{reminder.contact.email}</:col>
+  <:action :let={reminder}>
+    <.link
+      method="delete"
+      href={~p"/reminders/#{reminder}/delete"}
+      data-confirm={gettext("Are you sure?")}
+    >
+      Delete
+    </.link>
+  </:action>
 </.table>

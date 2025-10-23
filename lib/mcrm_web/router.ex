@@ -34,8 +34,8 @@ defmodule McrmWeb.Router do
     resources "/companies", CompanyController
     resources "/mailtemplates", MailTemplateController
 
+    delete "/reminders/:id/delete", ReminderController, :delete
   end
-
 
   # Other scopes may use custom stacks.
   # scope "/api", McrmWeb do

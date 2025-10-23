@@ -10,4 +10,10 @@ defmodule McrmWeb.ReminderController do
 
     render(conn, :index, reminders: reminders)
   end
+
+  def delete(conn, %{"id" => id}) do
+    reminder = Contacts.get_reminder!(id)
+    Contacts.delete_reminder(reminder)
+    redirect(conn, to: ~p"/")
+  end
 end
