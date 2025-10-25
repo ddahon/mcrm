@@ -1,8 +1,0 @@
-<.header>
-  {gettext("Edit Contact info")} {@contact_info.id}
-  <:subtitle>{gettext("Use this form to manage contact_info records in your database.")}</:subtitle>
-</.header>
-
-<.contact_info_form changeset={@changeset} action={~p"/contactinfos/#{@contact_info}"} />
-
-<.back navigate={~p"/contactinfos"}>{gettext("Back to contactinfos")}</.back>

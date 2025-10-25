@@ -20,7 +20,7 @@
     <div class="sr-only">
       <.link navigate={~p"/contactinfos/#{contact_info}"}>{gettext("Show")}</.link>
     </div>
-    <.link navigate={~p"/contactinfos/#{contact_info}/edit"}>{gettext("Edit")}</.link>
+    <.link navigate={~p"/contactinfos/#{contact_info}/show/edit"}>{gettext("Edit")}</.link>
   </:action>
   <:action :let={contact_info}>
     <.link href={~p"/contactinfos/#{contact_info}"} method="delete" data-confirm="Are you sure?">
