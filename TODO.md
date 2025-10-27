@@ -1,17 +1,9 @@
-# TODO
-## doing
-- generate templates
-  - fix layout for liveview
-  - create livecomponent for generate template modal
-  - add button to show modal
+## Next up
+- import manually contacts from CSV
+- generate .docx templates
 
-## todo
-- multiple chronological notes
-- deploy
-  - CSV/google sheets integration (load/export) 
-- generate mail templates
-- clarify "actions"
-- sorting in all the tables
-- searchbar
+## Changelog
 
-## bugs
+### 27/10/2025
+- restructured TODO.md
+- added deploy script
